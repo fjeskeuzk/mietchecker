@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"C:\\Users\\Felix\\Desktop\\Mietchecker\")",
+      "Bash(dir:*)",
+      "Bash(cat:*)",
+      "Bash(test:*)",
+      "Bash(powershell:*)",
+      "Bash(PowerShell -Command \"Get-ChildItem ''C:\\Users\\Felix\\Desktop\\Mietchecker\\docs\\'' -Name\")",
+      "Bash(npm run db:setup:*)",
+      "Bash(npm install:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

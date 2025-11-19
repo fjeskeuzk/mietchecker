@@ -1,0 +1,152 @@
+{
+  "common": {
+    "appName": "Mietchecker",
+    "loading": "Laden...",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "close": "Schließen",
+    "back": "Zurück",
+    "next": "Weiter",
+    "submit": "Absenden",
+    "search": "Suchen"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "projects": "Projekte",
+    "settings": "Einstellungen",
+    "billing": "Abrechnung",
+    "logout": "Abmelden",
+    "login": "Anmelden",
+    "signup": "Registrieren"
+  },
+  "auth": {
+    "signIn": "Anmelden",
+    "signUp": "Registrieren",
+    "signOut": "Abmelden",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "forgotPassword": "Passwort vergessen?",
+    "noAccount": "Noch kein Konto?",
+    "hasAccount": "Bereits ein Konto?",
+    "magicLink": "Magic Link senden",
+    "checkEmail": "Prüfen Sie Ihre E-Mails"
+  },
+  "landing": {
+    "hero": {
+      "title": "Finde deine perfekte Wohnung",
+      "subtitle": "KI-gestützte Immobilienbewertung für deutsche Wohnungssuchende",
+      "cta": "Jetzt kostenlos testen"
+    },
+    "features": {
+      "title": "Funktionen",
+      "dataCollection": {
+        "title": "Umfassende Datensammlung",
+        "description": "Sammelt Daten aus OpenStreetMap und öffentlichen Stadtdatensätzen"
+      },
+      "aiAnalysis": {
+        "title": "KI-Analyse",
+        "description": "Intelligente Bewertung und Empfehlungen mit Gemini AI"
+      },
+      "chat": {
+        "title": "Interaktiver Chat",
+        "description": "Stelle Fragen zu jeder Immobilie und erhalte sofortige Antworten"
+      }
+    }
+  },
+  "dashboard": {
+    "title": "Meine Projekte",
+    "createProject": "Neues Projekt erstellen",
+    "noProjects": "Keine Projekte vorhanden",
+    "noProjectsDescription": "Erstellen Sie Ihr erstes Projekt, um loszulegen"
+  },
+  "project": {
+    "title": "Projekt",
+    "create": "Projekt erstellen",
+    "edit": "Projekt bearbeiten",
+    "delete": "Projekt löschen",
+    "deleteConfirm": "Möchten Sie dieses Projekt wirklich löschen?",
+    "name": "Projektname",
+    "address": "Adresse",
+    "coordinates": "Koordinaten",
+    "score": "Gesamtbewertung",
+    "metrics": "Metriken",
+    "chat": "Chat",
+    "ingestion": "Daten abrufen",
+    "startIngestion": "Daten aktualisieren",
+    "ingestionRunning": "Daten werden abgerufen...",
+    "ingestionComplete": "Daten erfolgreich abgerufen",
+    "ingestionFailed": "Fehler beim Abrufen der Daten"
+  },
+  "metrics": {
+    "noise": "Lärmbelastung",
+    "light": "Lichtverschmutzung",
+    "crime": "Kriminalität",
+    "internet_speed": "Internetgeschwindigkeit",
+    "demographics": "Demografie",
+    "grocery_stores": "Lebensmittelgeschäfte",
+    "laundromats": "Waschsalons",
+    "parking": "Parkmöglichkeiten",
+    "noData": "Keine Daten verfügbar",
+    "fetchedAt": "Abgerufen am"
+  },
+  "chat": {
+    "title": "Chat mit KI-Assistent",
+    "placeholder": "Stellen Sie eine Frage zur Immobilie...",
+    "send": "Senden",
+    "clear": "Verlauf löschen",
+    "export": "Exportieren",
+    "noMessages": "Noch keine Nachrichten",
+    "startConversation": "Beginnen Sie ein Gespräch über diese Immobilie",
+    "exampleQuestions": "Beispielfragen:",
+    "example1": "Wie ist die Lärmbelastung?",
+    "example2": "Was gibt es für Einkaufsmöglichkeiten?",
+    "example3": "Ist die Gegend sicher?"
+  },
+  "billing": {
+    "title": "Abrechnung",
+    "plan": "Aktueller Plan",
+    "free": "Kostenlos",
+    "premium": "Premium",
+    "upgrade": "Auf Premium upgraden",
+    "manage": "Abrechnung verwalten",
+    "features": {
+      "free": {
+        "projects": "Bis zu 3 Projekte",
+        "chat": "Begrenzte Chat-Nachrichten",
+        "updates": "Monatliche Datenaktualisierungen"
+      },
+      "premium": {
+        "projects": "Unbegrenzte Projekte",
+        "chat": "Unbegrenzte Chat-Nachrichten",
+        "updates": "Tägliche Datenaktualisierungen",
+        "export": "PDF-Export",
+        "priority": "Priority Support"
+      }
+    }
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "profile": "Profil",
+    "appearance": "Erscheinungsbild",
+    "language": "Sprache",
+    "theme": "Theme",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "privacy": "Datenschutz",
+    "exportData": "Daten exportieren",
+    "deleteAccount": "Konto löschen"
+  },
+  "errors": {
+    "generic": "Ein Fehler ist aufgetreten",
+    "notFound": "Nicht gefunden",
+    "unauthorized": "Nicht autorisiert",
+    "forbidden": "Zugriff verweigert",
+    "invalidInput": "Ungültige Eingabe",
+    "networkError": "Netzwerkfehler",
+    "rateLimitExceeded": "Ratenlimit überschritten. Bitte versuchen Sie es später erneut."
+  }
+}
