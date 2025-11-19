@@ -3,14 +3,16 @@
 
 import Stripe from 'stripe';
 
-if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error('Missing STRIPE_SECRET_KEY environment variable');
-}
+// Check if Stripe is configured
+export const isStripeConfigured = !!process.env.STRIPE_SECRET_KEY;
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: '2024-12-18.acacia',
-  typescript: true,
-});
+// Initialize Stripe only if configured
+export const stripe = process.env.STRIPE_SECRET_KEY
+  ? new Stripe(process.env.STRIPE_SECRET_KEY, {
+      apiVersion: '2024-12-18.acacia',
+      typescript: true,
+    })
+  : null;
 
 export const PRICE_ID = process.env.STRIPE_PRICE_ID || '';
 
@@ -21,6 +23,10 @@ export async function createCheckoutSession(
   successUrl: string,
   cancelUrl: string
 ): Promise<Stripe.Checkout.Session> {
+  if (!stripe) {
+    throw new Error('Stripe is not configured. Please set STRIPE_SECRET_KEY environment variable.');
+  }
+
   try {
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
@@ -64,6 +70,10 @@ export async function createOneTimePaymentSession(
   successUrl: string,
   cancelUrl: string
 ): Promise<Stripe.Checkout.Session> {
+  if (!stripe) {
+    throw new Error('Stripe is not configured. Please set STRIPE_SECRET_KEY environment variable.');
+  }
+
   try {
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
@@ -103,6 +113,10 @@ export async function createCustomerPortalSession(
   customerId: string,
   returnUrl: string
 ): Promise<string> {
+  if (!stripe) {
+    throw new Error('Stripe is not configured. Please set STRIPE_SECRET_KEY environment variable.');
+  }
+
   try {
     const session = await stripe.billingPortal.sessions.create({
       customer: customerId,
@@ -122,6 +136,10 @@ export function constructWebhookEvent(
   payload: string | Buffer,
   signature: string
 ): Stripe.Event {
+  if (!stripe) {
+    throw new Error('Stripe is not configured. Please set STRIPE_SECRET_KEY environment variable.');
+  }
+
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
   if (!webhookSecret) {
@@ -140,6 +158,10 @@ export function constructWebhookEvent(
 export async function getSubscriptionStatus(
   subscriptionId: string
 ): Promise<Stripe.Subscription | null> {
+  if (!stripe) {
+    return null;
+  }
+
   try {
     return await stripe.subscriptions.retrieve(subscriptionId);
   } catch (error) {
@@ -150,6 +172,10 @@ export async function getSubscriptionStatus(
 
 // Helper to cancel subscription
 export async function cancelSubscription(subscriptionId: string): Promise<Stripe.Subscription> {
+  if (!stripe) {
+    throw new Error('Stripe is not configured. Please set STRIPE_SECRET_KEY environment variable.');
+  }
+
   try {
     return await stripe.subscriptions.cancel(subscriptionId);
   } catch (error) {

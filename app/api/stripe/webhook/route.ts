@@ -1,10 +1,18 @@
 // Stripe webhook handler
 import { NextRequest, NextResponse } from 'next/server';
-import { constructWebhookEvent } from '@/lib/stripe';
+import { constructWebhookEvent, isStripeConfigured } from '@/lib/stripe';
 import { supabaseAdmin } from '@/lib/supabaseAdmin';
 import Stripe from 'stripe';
 
 export async function POST(request: NextRequest) {
+  // Check if Stripe is configured
+  if (!isStripeConfigured) {
+    return NextResponse.json(
+      { error: 'Stripe is not configured' },
+      { status: 503 }
+    );
+  }
+
   try {
     const body = await request.text();
     const signature = request.headers.get('stripe-signature');

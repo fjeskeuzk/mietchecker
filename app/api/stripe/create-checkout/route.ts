@@ -1,9 +1,17 @@
 // API route to create Stripe checkout session
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerSupabaseClient } from '@/lib/supabaseServer';
-import { createCheckoutSession } from '@/lib/stripe';
+import { createCheckoutSession, isStripeConfigured } from '@/lib/stripe';
 
 export async function POST(request: NextRequest) {
+  // Check if Stripe is configured
+  if (!isStripeConfigured) {
+    return NextResponse.json(
+      { error: 'Payment processing is not available. Stripe is not configured.' },
+      { status: 503 }
+    );
+  }
+
   try {
     const supabase = await createServerSupabaseClient();
     const {
