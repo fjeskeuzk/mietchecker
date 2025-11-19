@@ -14,7 +14,10 @@
       "Bash(nul)",
       "Bash(del nul)",
       "Bash(git add:*)",
-      "Bash(git commit -m \"$(cat <<''EOF''\nFix i18n config and TypeScript errors for Vercel deployment\n\n- Created i18n.ts at root for next-intl plugin compatibility\n- Updated next.config.js to use default i18n path\n- Simplified vercel.json (removed deprecated env var syntax)\n- Fixed unused useEffect import in login page\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+      "Bash(git commit -m \"$(cat <<''EOF''\nFix i18n config and TypeScript errors for Vercel deployment\n\n- Created i18n.ts at root for next-intl plugin compatibility\n- Updated next.config.js to use default i18n path\n- Simplified vercel.json (removed deprecated env var syntax)\n- Fixed unused useEffect import in login page\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(if exist .next rmdir /s /q .next)",
+      "Bash(findstr:*)",
+      "Bash(del \"C:\\Users\\Felix\\Desktop\\Mietchecker\\i18n.ts\")"
     ],
     "deny": [],
     "ask": []

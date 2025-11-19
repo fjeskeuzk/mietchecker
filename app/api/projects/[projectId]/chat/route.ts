@@ -6,7 +6,7 @@ import { generateChatResponse, checkRateLimit } from '@/lib/gemini';
 
 // GET /api/projects/[projectId]/chat - Get conversation history
 export async function GET(
-  request: NextRequest,
+  _request: NextRequest,
   { params }: { params: Promise<{ projectId: string }> }
 ) {
   try {
