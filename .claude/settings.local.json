@@ -8,7 +8,12 @@
       "Bash(powershell:*)",
       "Bash(PowerShell -Command \"Get-ChildItem ''C:\\Users\\Felix\\Desktop\\Mietchecker\\docs\\'' -Name\")",
       "Bash(npm run db:setup:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(timeout:*)",
+      "Bash(nul)",
+      "Bash(del nul)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []
