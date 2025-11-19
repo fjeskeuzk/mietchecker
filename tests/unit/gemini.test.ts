@@ -1,5 +1,5 @@
 /**
- * Unit tests for Gemini LLM integration
+ * Unit tests for Gemini LLM integration WIP
  */
 
 import { generateChatResponse, checkRateLimit } from '@/lib/gemini';
